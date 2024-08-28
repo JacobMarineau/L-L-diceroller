@@ -70,14 +70,14 @@ function damageCal() {
 
   // Display results
   document.getElementById("results").innerHTML = `
-        <p>Remaining Health Points (HP): ${result.remainingHP}</p>
+        <p>Remaining Health Points (HP): ${Math.round(result.remainingHP)}</p>
         <p>Remaining Temporary Health Points (THP): ${result.remainingTHP}</p>
         <p>Remaining Over-Shields (OS): ${result.remainingOS}</p>
         <p>Immunity Granted: ${result.immunityGranted ? "Yes" : "No"}</p>
     `;
 
   // Update the form with the new values for next attack
-  document.getElementById("HP").value = result.remainingHP;
+  document.getElementById("HP").value = Math.round(result.remainingHP);
   document.getElementById("THP").value = result.remainingTHP;
   document.getElementById("OS").value = result.remainingOS;
 }

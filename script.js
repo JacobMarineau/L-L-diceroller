@@ -2,7 +2,7 @@ function legendsDamageCal(damage, damageType, AR, MR, HP, THP, OS) {
   let remainingDamage = damage;
   let immunityGranted = false;
 
-  // Step 1: Apply damage to Over-Shields (OS)
+  // Apply damage to Over-Shields (OS)
   if (OS > 0) {
     if (remainingDamage <= OS) {
       OS -= remainingDamage;
@@ -14,7 +14,7 @@ function legendsDamageCal(damage, damageType, AR, MR, HP, THP, OS) {
     }
   }
 
-  // Step 2: Apply damage reduction based on type (Physical or Magic)
+  // Apply damage reduction based on type (Physical or Magic)
   if (!immunityGranted) {
     if (damageType === "physical") {
       remainingDamage -= AR;
@@ -25,7 +25,7 @@ function legendsDamageCal(damage, damageType, AR, MR, HP, THP, OS) {
     // Ensure no negative damage after reduction
     remainingDamage = Math.max(remainingDamage, 0);
 
-    // Step 3: Apply damage to Temporary Health Points (THP)
+    // Apply damage to Temporary Health Points (THP)
     if (THP > 0) {
       if (remainingDamage <= THP) {
         THP -= remainingDamage;
@@ -36,7 +36,7 @@ function legendsDamageCal(damage, damageType, AR, MR, HP, THP, OS) {
       }
     }
 
-    // Step 4: Apply damage to Health Points (HP)
+    // Apply damage to Health Points (HP)
     if (HP > 0) {
       if (remainingDamage <= HP) {
         HP -= remainingDamage;

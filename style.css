@@ -37,9 +37,23 @@ button {
 button:hover {
     background-color: #218838;
 }
-.results {
+
+@keyframes fadeDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .results {
     margin-top: 20px;
     padding: 10px;
     background-color: #f8f9fa;
     border-radius: 5px;
-}
+    animation: fadeDown 1s ease-out forwards;
+  }
+

@@ -78,6 +78,9 @@ function damageCal() {
         <p>Immunity Granted: ${result.immunityGranted ? "Yes" : "No"}</p>
     `;
 
+  // Play animation by adding in results class
+  document.getElementById("results").classList.add("results");
+
   // Update the form with the new values for next attack
   document.getElementById("HP").value = Math.round(result.remainingHP);
   document.getElementById("THP").value = Math.round(result.remainingTHP);
